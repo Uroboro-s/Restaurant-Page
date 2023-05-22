@@ -1,0 +1,52 @@
+
+
+#contact-us{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+   
+    margin-top: 40px;
+    margin-bottom: 10px;
+    margin-left: 12%;
+    margin-right: 12%;
+    background-color: black;
+    color: white;
+    opacity: 0.7; 
+
+    border-radius: 5px;
+}
+
+#contact-us-heading{
+    font-family: 'myFont';
+    text-decoration: underline;
+    font-size: 56px;
+    padding-left: 2%;
+    margin-top: 13px;
+    margin-bottom: 10px;
+}
+
+#contact-us-paragraph{
+    font-family: 'myFont';
+    font-size: 28px;
+    padding-left: 4%;
+    padding-right: 4%;
+    margin-top: 4px;
+    
+    line-height: 46px;
+}
+#contact-us-paragraph > span{
+    font-weight: bolder;
+}
+#contact-us-paragraph > a{
+    color: rgb(190, 186, 186);
+}
+#contact-us-paragraph > a:hover{
+    color:white;
+}
+
+@media only screen and (min-width: 840px){
+    #contact-us{
+        margin-left: 250px;
+        margin-right: 250px;
+    }
+}

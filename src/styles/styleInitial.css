@@ -1,0 +1,58 @@
+@font-face {
+    font-family: 'myFont';
+    src: url(../SchoolCursive.ttf);
+}
+
+body{
+    
+    background-repeat:no-repeat;
+    background-size: cover;
+    
+    background-image: url(../images/bg.jpg);
+    margin: 0;
+}
+
+header{
+    /* display: flex; */
+    
+    
+
+    color: white;
+    height: auto;
+    background-color: black;
+    opacity: 0.7;
+
+    padding-top: 10px;
+}
+header > h1{
+    font-style: italic;
+    font-family: 'myFont';
+    font-size: 58px;
+    text-align: center;
+    letter-spacing: 2px;
+    padding-left: 10px;
+    margin-top: 11px;
+    margin-bottom: 0px;
+    
+}
+header > div{
+    display: flex;
+    justify-content: center;
+}
+header > div > div{
+    cursor: pointer;
+    padding-left: 45px;
+    padding-top: 10px;
+
+    font-size: 24px;
+    font-family: 'myFont';
+}
+header > div > div:hover{
+    text-decoration: underline;
+    /* font-size: 28px; */
+}
+
+#main-content{
+    min-height: 100%;
+    
+}
