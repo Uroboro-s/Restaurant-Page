@@ -37,12 +37,13 @@ module.exports = (env, argv) => {
         },
         plugins: [
             new HtmlWebpackPlugin({
-                template: './dist/index.html',
-                title: "Sonia's Restaurant",
-                meta: {
-                    viewport: 'width=device-width, initial-scale=1',
-                    description: 'Experience the extraordinary fusion of Italian and Indian cuisine at Sonia\'s. Est. 1946 in Mumbai.'
-                }
+                template: './src/template.html',
+                title: "Sonia's Restaurant - Italian-Indian Fusion Cuisine",
+                minify: isProduction ? {
+                    removeComments: true,
+                    collapseWhitespace: true,
+                    removeAttributeQuotes: false
+                } : false
             }),
         ],
         devServer: {
