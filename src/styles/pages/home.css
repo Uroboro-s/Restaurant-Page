@@ -1,0 +1,118 @@
+/* Home Page Styles */
+
+.hero {
+  position: relative;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: linear-gradient(rgba(26, 26, 26, 0.6), rgba(26, 26, 26, 0.6)),
+              url('../../assets/images/menu/bg.jpg') center/cover;
+  color: var(--white);
+  padding: var(--space-16) var(--space-4);
+}
+
+.hero__content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero__title {
+  font-family: var(--font-accent);
+  font-size: var(--text-6xl);
+  color: var(--primary-gold);
+  margin-bottom: var(--space-4);
+  animation: fadeInUp 1s var(--ease-out);
+}
+
+.hero__subtitle {
+  font-size: var(--text-2xl);
+  margin-bottom: var(--space-3);
+  animation: fadeInUp 1s var(--ease-out) 0.2s both;
+}
+
+.hero__description {
+  font-size: var(--text-lg);
+  color: var(--gray-300);
+  margin-bottom: var(--space-8);
+  animation: fadeInUp 1s var(--ease-out) 0.4s both;
+}
+
+.hero__cta {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+  flex-wrap: wrap;
+  animation: fadeInUp 1s var(--ease-out) 0.6s both;
+}
+
+.featured {
+  padding: var(--space-20) 0;
+  background-color: var(--bg-primary);
+}
+
+.featured__title {
+  text-align: center;
+  font-size: var(--text-4xl);
+  color: var(--primary-gold);
+  margin-bottom: var(--space-12);
+}
+
+.quick-info {
+  background-color: var(--secondary-cream);
+  padding: var(--space-16) 0;
+}
+
+[data-theme="dark"] .quick-info {
+  background-color: var(--dark-bg-secondary);
+}
+
+.quick-info__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--space-8);
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-4);
+}
+
+.quick-info__item {
+  text-align: center;
+  padding: var(--space-6);
+}
+
+.quick-info__icon {
+  font-size: var(--text-5xl);
+  margin-bottom: var(--space-4);
+}
+
+.quick-info__title {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--primary-burgundy);
+  margin-bottom: var(--space-2);
+}
+
+.testimonials {
+  padding: var(--space-20) 0;
+  background-color: var(--bg-secondary);
+}
+
+.testimonials__title {
+  text-align: center;
+  font-size: var(--text-4xl);
+  color: var(--primary-gold);
+  margin-bottom: var(--space-12);
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
