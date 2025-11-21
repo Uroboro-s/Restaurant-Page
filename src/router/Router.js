@@ -1,4 +1,6 @@
 // Client-side Router
+import AOS from 'aos';
+import { initRippleEffect } from '../utils/animations';
 
 class Router {
   constructor(routes, rootElement) {
@@ -33,22 +35,39 @@ class Router {
     const route = this.routes[path] || this.routes['/'];
 
     if (route) {
-      // Clear current content
-      while (this.rootElement.firstChild) {
-        this.rootElement.removeChild(this.rootElement.firstChild);
-      }
+      // Add fade out animation
+      this.rootElement.style.opacity = '0';
+      this.rootElement.style.transition = 'opacity 0.2s ease';
 
-      // Render new page
-      const page = route();
-      this.rootElement.appendChild(page);
-
-      // Update active nav links
-      document.querySelectorAll('.nav__link').forEach(link => {
-        link.classList.remove('nav__link--active');
-        if (link.getAttribute('href') === path) {
-          link.classList.add('nav__link--active');
+      setTimeout(() => {
+        // Clear current content
+        while (this.rootElement.firstChild) {
+          this.rootElement.removeChild(this.rootElement.firstChild);
         }
-      });
+
+        // Render new page
+        const page = route();
+        this.rootElement.appendChild(page);
+
+        // Fade in animation
+        requestAnimationFrame(() => {
+          this.rootElement.style.opacity = '1';
+        });
+
+        // Refresh AOS animations and ripple effects
+        setTimeout(() => {
+          AOS.refresh();
+          initRippleEffect();
+        }, 100);
+
+        // Update active nav links
+        document.querySelectorAll('.nav__link').forEach(link => {
+          link.classList.remove('nav__link--active');
+          if (link.getAttribute('href') === path) {
+            link.classList.add('nav__link--active');
+          }
+        });
+      }, 200);
     }
   }
 }

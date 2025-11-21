@@ -2,6 +2,13 @@
 
 import './styles/main.css';
 
+// Import AOS (Animate On Scroll)
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+// Import animation utilities
+import { initRippleEffect } from './utils/animations';
+
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
 import Router from './router/Router';
@@ -51,6 +58,30 @@ const initApp = () => {
   };
 
   new Router(routes, contentWrapper);
+
+  // Initialize AOS (Animate On Scroll)
+  AOS.init({
+    duration: 800,
+    easing: 'ease-in-out',
+    once: true,
+    offset: 100,
+    delay: 0,
+    mirror: false,
+    anchorPlacement: 'top-bottom'
+  });
+
+  // Refresh AOS on route changes
+  window.addEventListener('popstate', () => {
+    setTimeout(() => {
+      AOS.refresh();
+      initRippleEffect();
+    }, 100);
+  });
+
+  // Initialize ripple effects
+  setTimeout(() => {
+    initRippleEffect();
+  }, 100);
 
   console.log('🍝 Sonia\'s Restaurant - Application Loaded Successfully!');
 };
